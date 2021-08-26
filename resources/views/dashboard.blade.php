@@ -19,9 +19,8 @@
         <label>Password : <input name="password" type="password" required/><br>
         <label for="">Confirm Password : <input name="confirm_password" type="password" required></label>
         <br>
-        
-        <label>Profile Picture: <input name="profile" type="file" required/></label><br>
         <input type="submit" value="Register" class="btn btn-primary"/><br><br>
+        <label>Profile Picture: <input name="profile" type="file" required/></label><br>
 </form>
 </body>
 <html>

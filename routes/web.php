@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,10 +19,6 @@ Route::get('/replace/{firstWord}/{finalWord}', function($firstWord, $finalWord){
     return view('demo', ['firstWord' => $firstWord, 'finalWord' => $finalWord, 'finalSentence' => $finalSentence, 'sentence' => $sentence]);
 });
 
-Route::get('/optional/{para?}', function($para = null){
-    return view('demo', ['para' => $para]);
-}); 
+Route::get('/form', [FormController::class,'create'])->name('register-form'); 
 
-Route::get('/form/{para?}', function($para = null){
-    return view('demo', ['para'=>$para]);
-});
+Route::post('/form', [FormController::class,'store'])->name('register');
